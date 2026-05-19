@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+*.pyo
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+backend/.venv/
+backend/venv/
+
+# Environment files
+.env
+.env.*
+backend/.env
+backend/.env.*
+fronted/.env
+fronted/.env.*
+
+# Backend artifacts
+backend/*.sqlite3
+backend/*.db
+backend/*.log
+
+# Frontend dependencies and builds
+fronted/node_modules/
+fronted/dist/
+fronted/dist-ssr/
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+!.vscode/extensions.json
+.idea/
