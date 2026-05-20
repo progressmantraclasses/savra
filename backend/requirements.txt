@@ -1,0 +1,30 @@
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+pydantic==2.11.3
+pydantic-settings==2.7.0
+
+# LLM
+groq==0.15.0
+
+# Queue
+celery==5.4.0
+redis==5.2.1
+
+# Semantic cache
+sentence-transformers==3.4.1
+numpy==2.2.2
+
+# PPTX generation
+python-pptx==1.0.2
+
+# Storage
+cloudinary==1.42.1
+
+# Database
+asyncpg==0.30.0
+
+# Rate limiting
+slowapi==0.1.9
+
+# Logging
+structlog==25.1.0

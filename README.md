@@ -73,8 +73,8 @@ sequenceDiagram
 
 | Path | Purpose |
 |---|---|
-| `backend/` | FastAPI app, Celery worker, LLM integration, storage, and DB code |
-| `fronted/` | React frontend app |
+| [backend/](backend/) | FastAPI app, Celery worker, LLM integration, storage, and DB code |
+| [fronted/](fronted/) | React frontend app |
 | `architecture/design-doc.md` | Longer architecture notes and scaling discussion |
 | `DECISIONS.md` | Why certain implementation choices were made |
 
@@ -190,7 +190,7 @@ Install these before running the app:
 
 ## Backend Setup
 
-The backend lives in `backend/`.
+The backend lives in [backend/](backend/).
 
 ### 1. Create and activate a virtual environment
 
@@ -284,7 +284,7 @@ If you run into import path problems, make sure the command is executed from `ba
 
 ## Frontend Setup
 
-The frontend lives in `fronted/` in this repository.
+The frontend lives in [fronted/](fronted/) in this repository.
 
 ### 1. Install dependencies
 

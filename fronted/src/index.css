@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --brand-violet: 255 255 255;
+    --brand-indigo: 99 102 241;
+  }
+
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    @apply bg-[#09090b] text-zinc-100 min-h-screen;
+  }
+
+  * {
+    @apply box-border;
+  }
+}
+
+@layer components {
+  /* ── Glass card ────────────────────────────────────── */
+  .glass-card {
+    @apply rounded-2xl border border-white/[0.06]
+           bg-white/[0.04] backdrop-blur-md shadow-2xl;
+  }
+
+  .panel {
+    @apply rounded-3xl border border-white/[0.08] bg-white/[0.04]
+           backdrop-blur-xl shadow-2xl;
+  }
+
+  .display-font {
+    font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  }
+
+  /* ── Gradient headline ─────────────────────────────── */
+  .gradient-text {
+    @apply bg-clip-text text-transparent
+           bg-gradient-to-r from-violet-400 via-indigo-400 to-cyan-400;
+  }
+
+  /* ── Primary button ────────────────────────────────── */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2
+           px-6 py-3 rounded-xl font-semibold text-sm
+           bg-gradient-to-r from-violet-600 to-indigo-600
+           hover:from-violet-500 hover:to-indigo-500
+           active:scale-[0.97]
+           shadow-lg shadow-violet-900/40
+           transition-all duration-200
+           disabled:opacity-50 disabled:cursor-not-allowed disabled:scale-100;
+  }
+
+  /* ── Input / Select ────────────────────────────────── */
+  .field-input {
+    @apply w-full rounded-xl border border-white/[0.08]
+           bg-white/[0.05] px-4 py-3 text-sm text-zinc-100
+           placeholder:text-zinc-500
+           focus:outline-none focus:ring-2 focus:ring-violet-500/50 focus:border-violet-500/50
+           transition-all duration-200;
+  }
+
+  /* ── Label ─────────────────────────────────────────── */
+  .field-label {
+    @apply block mb-1.5 text-xs font-medium uppercase tracking-widest text-zinc-400;
+  }
+
+  /* ── Status badge ──────────────────────────────────── */
+  .badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold;
+  }
+
+  .badge-queued    { @apply bg-amber-400/10  text-amber-400  border border-amber-400/20; }
+  .badge-processing{ @apply bg-violet-400/10 text-violet-400 border border-violet-400/20; }
+  .badge-done      { @apply bg-emerald-400/10 text-emerald-400 border border-emerald-400/20; }
+  .badge-failed    { @apply bg-rose-400/10   text-rose-400   border border-rose-400/20; }
+
+  .progress-track {
+    @apply h-2 w-full overflow-hidden rounded-full bg-white/[0.06];
+  }
+
+  .progress-fill {
+    @apply h-full rounded-full bg-gradient-to-r from-violet-500 via-indigo-500 to-cyan-500 transition-all duration-500;
+  }
+
+  /* ── Spinner ───────────────────────────────────────── */
+  .spinner {
+    @apply w-5 h-5 rounded-full border-2 border-white/20 border-t-white animate-spin;
+  }
+
+  /* ── Subtle glow orbs (decorative) ────────────────── */
+  .orb {
+    @apply absolute rounded-full blur-3xl opacity-20 pointer-events-none;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar        { width: 6px; }
+::-webkit-scrollbar-track  { background: transparent; }
+::-webkit-scrollbar-thumb  { @apply bg-white/10 rounded-full; }
+::-webkit-scrollbar-thumb:hover { @apply bg-white/20; }
+
+/* Number input hide arrows */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+input[type='number'] { -moz-appearance: textfield; }
+
+/* Fade-in animation */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up {
+  animation: fadeUp 0.5s ease forwards;
+}
+
+/* Pulse-dot animation */
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(0.75); }
+}
+.pulse-dot {
+  animation: pulseDot 1.4s ease-in-out infinite;
+}
+.pulse-dot-2 { animation-delay: 0.2s; }
+.pulse-dot-3 { animation-delay: 0.4s; }
