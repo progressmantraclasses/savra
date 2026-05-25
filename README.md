@@ -235,7 +235,7 @@ Copy `backend/.env.example` to `backend/.env` and fill in your real values.
 
 ```env
 GROQ_API_KEY=gsk_your_key_here
-DATABASE_URL=postgresql+asyncpg://postgres:password@localhost:5432/savra
+DATABASE_URL=postgresql://postgres:password@localhost:5432/savra
 REDIS_URL=rediss://default:password@your-upstash-url.upstash.io:6379
 CLOUDINARY_CLOUD_NAME=your_cloud_name
 CLOUDINARY_API_KEY=your_api_key
